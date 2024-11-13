@@ -1,0 +1,745 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  height: 100px; /* Altura fija para la cabecera */
+  width: 100%; /* Asegura que el header ocupe todo el ancho disponible */
+}
+
+.logo-container {
+  width: 150px; /* Tamaño fijo para el contenedor del logo */
+  margin-top: 20px;
+}
+
+.logo {
+  width: 150px; /* Aseguramos un tamaño fijo para el logo */
+  height: 120px; /* Fijamos la altura del logo */
+  margin: 0; /* Quitamos el margen que desplazaba el logo */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 0; /* Eliminamos el margen negativo */
+  margin-top: 20px;
+}
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-input {
+  padding: 8px 8px 8px 30px; /* Espacio para el icono dentro del input */
+  width: 250px; /* Fijamos un ancho constante */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.search-button {
+  padding: 8px 12px;
+  background-color: #ffffff;
+  color: #003870;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center; /* Centra los iconos en el contenedor */
+  margin-top: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px; /* Espacio entre iconos */
+  margin-left: 0; /* Eliminamos el margen negativo */
+}
+
+.social-icon {
+  color: #003870; /* Color para los iconos */
+  font-size: 24px; /* Tamaño de los iconos */
+  text-decoration: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000000;
+}
+
+.search-social-container {
+  margin-right: 0; /* Ajustamos el margen para que no desplace los elementos */
+}
+
+/*Media Querys*/
+
+@media (min-width: 1024px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right: 422px;
+  }
+  
+}
+.contact-text {
+  color: #000;  /* Color del texto */
+  font-weight: bold;
+  font-size: 16px;  /* Tamaño del texto */
+  text-decoration:none;
+  margin-left: -50px;
+  }
+
+
+@media (max-width: 320px) {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right:482px;
+  }
+}
+
+@media (max-width:480px){
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right:482px;
+  }
+}
+
+@media (max-width:768px){
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right:482px;
+  }
+}
+
+@media (max-width: 1024px){
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right:482px;
+  }
+}
+
+@media (max-width: 1366px){
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right:482px;
+  }
+}
+
+@media (min-width:1367px){
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right:482px;
+  }
+}
+
+@media (min-width:1920px){
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    height: 100px; /* Altura fija para la cabecera */
+  }
+  
+  .logo-container {
+    width: 150px; /* Tamaño fijo para el contenedor del logo */
+    margin-top: 20px;
+  }
+  
+  .logo {
+    width: 550px; /* Ajusta el logo al tamaño del contenedor */
+    height: 120px;
+    margin-left: 372px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: -360px;
+    margin-top: 20px;
+  }
+  
+  .search-input-wrapper {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 8px 8px 30px; /* espacio para el icono dentro del input */
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin:auto;
+  
+  }
+  
+  .search-button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #003870;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos en el contenedor */
+    margin-top: 10px; /* Espacio encima de los iconos sociales */
+  
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+    margin-left:-290px;
+  }
+  
+  .social-icon {
+    color: #003870; /* Color para los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    text-decoration: none;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+  }
+  
+  .search-social-container{
+    margin-right:482px;
+  }
+}
