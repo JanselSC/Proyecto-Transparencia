@@ -4,6 +4,7 @@ import './App.css';
 import LandingPageComponent from './Components/LandingPage';
 import SideMenu from './Components/SideMenu';
 import Header from './Components/HeaderComponent';
+import Footer from './Components/FooterComponent';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <div className="landing-page-container">
         <LandingPageComponent />
       </div>
-
+      <div>
+        <Footer/>
+      </div>
     </div>
   );
 }
