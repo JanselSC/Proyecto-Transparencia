@@ -1,4 +1,5 @@
 import React from 'react';
+import nortice1 from '../Img/nortice1.png'
 
 const Footer = () => {
   return (
@@ -9,6 +10,8 @@ const Footer = () => {
         fontSize: '12px',
         backgroundColor: '#142e52',
         color: '#ffffff',
+        width: '100%',
+        maxWidth:'100%',
         paddingTop: '120px',
         paddingBottom: '30px',
         borderTopLeftRadius:'50px',
@@ -137,6 +140,7 @@ const Footer = () => {
             justifyContent: 'flex-end',
             gap: '20px',
             alignItems: 'center',
+           
           }}
         >
           <div
@@ -190,7 +194,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="images/logo_nortic_e1-1.png"
+                src={nortice1}
                 alt="Logo NORTIC E1"
               />
             </a>

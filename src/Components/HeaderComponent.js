@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./HeaderComponent.css"; // Asegúrate de tener el archivo CSS correspondiente
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faXTwitter, faYoutube, faMagnifyingGlass } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faXTwitter, faYoutube,faMagnifyingGlass } from '@fortawesome/free-brands-svg-icons';
+import { RiSearchEyeLine } from "react-icons/ri";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,31 +21,37 @@ const Header = () => {
 
   return (
     <header className="header">
+      
       <div className="logo-container">
-        <img src="https://inabie.gob.do/transparencia/images/Logo-inabie.png" alt="Logo" className="logo" />
+        <img src="https://inabie.gob.do/transparencia/images/Logo-inabie.png" alt="Logo" className="logo"  style={{ height:'128px', marginTop:'20px'}}/>
       </div>
 
-        <div className="escudo-container" style={{marginLeft:'1340px', marginBottom:'50px'}}>
+ 
+      {/* Contenedor para los elementos de búsqueda y redes sociales */}
+      <div className="escudo-container" style={{marginLeft:'1290px', marginRight:'-50px', marginBottom:'50px'}}>
           <img src="https://inabie.gob.do/transparencia/images/escudordinabie.png"/>
         </div>
-      {/* Contenedor para los elementos de búsqueda y redes sociales */}
+        
+      <div className="search-social-container" style={{marginTop:'50px', marginRight:'545px'}}>
+        <div className="search-container" style={{marginTop:'50px', marginLeft:'-220px',   width: '550px' /* Fijamos un ancho constante */
+}}>
 
-      <div className="search-social-container" style={{marginTop:'50px'}}>
-        <div className="search-container">
-          <div className="search-input-wrapper">
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              placeholder="Buscar..."
-              className="search-input"
-            />
-          </div>
-          
-        </div>
+
+  <div className="search-input-wrapper">
+    <input
+      type="text"
+      value={searchTerm}
+      onChange={handleSearchChange}
+           className="search-input"
+           
+    />
+  
+    <RiSearchEyeLine className="search-icon" onClick={handleSearchSubmit}  style={{marginTop:'-5px'}}/>
+  </div>
+</div>
 
         {/* Contenedor de iconos sociales */}
-        <div className="social-icons" >
+        <div className="social-icons" style={{marginLeft:'-150px'}}>
         <a href="https://inabie.gob.do/contacto" style={{textDecoration:'none', marginTop:'7px'}}>
           <span className="contact-text">Contáctanos</span>
           </a>

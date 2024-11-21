@@ -8,17 +8,18 @@
   height: 175px; /* Height remains fixed */
   background: linear-gradient(#003870 35%, #003870 50%, #ffffff 50%); /* Gradient inclined at 45 degrees */
   border-radius: 25px;
-  box-shadow: 0 6px 15px rgba(145, 2, 49, 0.2);
+  box-shadow: 4px 4px 20px rgba(0, 56, 112, 0.6); /* sombra azul más sobresaliente */
   cursor: pointer;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'SairaMedium', sans-serif;
   font-size: 16px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  
 }
 
 .button-container:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   box-shadow: 0 12px 25px 0 rgba(0, 0, 0, 0.3);
   border: 3px solid #CA0714; /* Red border on hover */
   border-bottom: 10px solid #CA0714;
@@ -36,6 +37,7 @@
   margin-top: 10px;
   font-weight: bold;
   font-size: 18px;
+  font-family: 'SairaMedium';
   color: black; /* Color of the text under the icon */
 }
 

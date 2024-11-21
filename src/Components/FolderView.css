@@ -1,0 +1,62 @@
+.folder-view {
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filters select {
+  margin-left: 8px;
+  padding: 5px;
+}
+
+.folder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.folder-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.folder-icon {
+  margin-right: 10px;
+}
+
+.folder-icon.folder {
+  color: #2980b9;
+}
+
+.folder-icon.document {
+  color: #8e44ad;
+}
+
+.folder-icon.image {
+  color: #27ae60;
+}
+
+.folder-name {
+  font-weight: bold;
+}

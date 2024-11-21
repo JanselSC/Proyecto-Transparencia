@@ -1,13 +1,12 @@
-/* Side menu container styles */
 .side-menu {
-    width: 496px;
-    min-height: 300px;
+    width: 475px; /* Valor fijo */
+    min-height: 300px; /* Valor fijo */
     position: absolute;
-    top: 336px;
-    left: 400px;
+    top: 339px; /* Valor fijo */
+    left: 420px; /* Valor fijo */
     background-color: #003870;
     border: 2px solid #ddd;
-    box-shadow: 2px 2px 16px rgba(77, 116, 133, 0.14);
+    box-shadow: 4px 4px 20px rgba(0, 56, 112, 0.6);
     border-radius: 12px;
     padding: 15px;
     box-sizing: border-box;
@@ -15,12 +14,15 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    transform: scale(1); /* Mantén un valor de escala constante */
+    margin-top:199px;
 }
+  
 
 /* Side menu toggle button */
 .side-menu-toggle {
     cursor: pointer;
-    padding: 10px;
+    padding: 0px;
 }
 
 /* Hamburger icon styling */
@@ -35,7 +37,7 @@
 .menu-items ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 5px;
     width: 100%;
 }
 
@@ -49,14 +51,19 @@
     font-size: 19px;
     text-align: left;
     width: 100%;
+    height: 100%;
     transition: background-color 0.3s ease; /* Esto aplica una transición suave */
 }
 
 /* Hover effect for menu items */
-.menu-items li:hover {
+li:hover {
     background-color: #A7040F;
     border-radius: 20px;
     width: auto;
+    padding-left: 20px;
+    padding-right:10px;
+    cursor: pointer;
+
 }
 
 /* Only change the text color when hovering */
@@ -94,7 +101,7 @@
     padding-left: 20px;
     border-left: 4px solid #e61414;
     margin-top: 10px;
-    margin-left: 130px;
+    margin-left: 110px;
 }
 
 .submenu-content ul {
@@ -105,7 +112,7 @@
 
 .submenu-content li {
     padding: 8px 15px;
-    margin-left: 32px;
+    margin-left: 23px;
     width: auto;
 }
 
@@ -128,6 +135,30 @@
 
 @media (min-width: 768px) {
     .card_container_side_menu {
-        min-width: 340px;
+        min-width: 30px;
     }
+}
+
+@media (min-width: 1110px) {
+    .card_container_side_menu {
+        min-width: 30px;
+    }
+    .side-menu {
+        width: 475px;
+        min-height: 300px;
+        position: absolute;
+        top: 339px;
+        left: 420px;
+        background-color: #003870;
+        border: 2px solid #ddd;
+        box-shadow: 4px 4px 20px rgba(0, 56, 112, 0.6); /* sombra azul más sobresaliente */
+        border-radius: 12px;
+        padding: 15px;
+        box-sizing: border-box;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    
 }
