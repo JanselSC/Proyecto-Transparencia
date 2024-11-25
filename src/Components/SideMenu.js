@@ -96,7 +96,7 @@ const SideMenu = ({ onCategorySelect }) => {
             <div className="menu-items">
                 <ul>
                     <li>
-                        <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}> 
+                        <Link to='' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <FontAwesomeIcon icon={faHome} className="menu-icon" /> Inicio
                         </Link>
                     </li>
@@ -109,13 +109,16 @@ const SideMenu = ({ onCategorySelect }) => {
 
                     {/* Base Legal Submenu */}
                     <li onClick={() => toggleSubmenu('baselegal')} className="submenu-toggle">
+                        
                         <FontAwesomeIcon icon={faBalanceScale} className="menu-icon" />
                         Base Legal de la Institución
                         <FontAwesomeIcon icon={submenuOpen.baselegal ? faChevronUp : faChevronDown} className="toggle-icon" />
                     </li>
                     {submenuOpen.baselegal && (
                         <ul className="submenu-content">
+                               <Link to='/folders' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Constitución de la República Dominicana')}>Constitución de la República Dominicana</li>
+                            </Link>
                             <li onClick={() => handleCategoryClick('Leyes')}>Leyes</li>
                             <li onClick={() => handleCategoryClick('Decretos')}>Decretos</li>
                             <li onClick={() => handleCategoryClick('Resoluciones')}>Resoluciones</li>

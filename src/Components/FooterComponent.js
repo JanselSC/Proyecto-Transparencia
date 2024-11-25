@@ -13,6 +13,7 @@ const Footer = () => {
         width: '100%',
         maxWidth:'100%',
         paddingTop: '120px',
+        marginTop:'260px',
         paddingBottom: '30px',
         borderTopLeftRadius:'50px',
         borderTopRightRadius:'50px',
@@ -132,14 +133,17 @@ const Footer = () => {
           <span style={{ fontSize:'18px'}}>© 2024 Todos los Derechos Reservados</span>
         </div>
 
+
+        <div style={{marginLeft:'1550px', marginTop:'-45px'}}>
         {/* Contenedor de las imágenes alineadas a la derecha */}
         <div
           className="container"
           style={{
             display: 'flex',
-            justifyContent: 'flex-end',
+         
             gap: '20px',
             alignItems: 'center',
+           
            
           }}
         >
@@ -199,6 +203,7 @@ const Footer = () => {
               />
             </a>
           </div>
+        </div>
         </div>
       </div>
     </footer>

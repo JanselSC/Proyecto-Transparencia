@@ -16,7 +16,7 @@ const LandingPageComponent = () => {
     window.open(links[index], '_blank'); // '_blank' asegura que se abra en una nueva pestaña
   };
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', marginTop:'-240px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', marginTop:'-310px' }}>
       <div style={{ border: '2px solid grey', padding: '10px', marginTop: '200px ',marginLeft:'320px', borderRadius: '10px', backgroundColor: 'linear-gradient(#003870 35%, #003870 50%, #ffffff 50%)', minHeight: '1190px',maxWidth: '2200px',boxShadow: '4px 4px 20px rgba(0, 56, 112, 0.6)', /* sombra azul más sobresaliente */
 }}>
 

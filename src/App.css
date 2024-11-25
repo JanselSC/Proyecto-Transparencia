@@ -1,14 +1,11 @@
 .App {
   text-align: center;
-  width: 100%; /* Ajustar el ancho al 100% */
-  height: 100vh; /* Usamos la altura completa de la ventana */
+  width: 2390px; /* Ancho máximo al 100% */
+  height: 750%; /* Altura máxima */
   position: relative;
   display: flex;
   flex-direction: column;
-}
 
-.generalContainer{
-  margin-Top:200px;
 }
 
 html, body {
@@ -16,39 +13,42 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Evitar el scroll horizontal */
-  overflow-y: auto; /* Permitir el scroll vertical */
+  overflow-x: hidden; /* Evita que aparezca el scroll horizontal */
+  overflow-y: scroll; /* Permite solo el scroll vertical */
+
 }
 
 .carousel-container {
   margin: 0 auto;
   padding: 20px 0;
-  width: 80%; /* Ancho adecuado para que no ocupe toda la pantalla */
-  max-width: 100%; /* Aseguramos que no sobrepase el ancho de la ventana */
+  width: 80%;
+  /* Aseguramos que el carrusel tenga espacio y no afecte al contenido */
   z-index: 10;
-  margin-left:99px;
   position: relative;
 }
 
 body {
+  transform: scale(1);
+  transform-origin: top left;
   width: 100vw;
-  height: 100vh; /* Usamos toda la altura de la ventana */
+  height: 100vh;
+
 }
 
 .App-logo {
-  height: 15rem; /* Altura relativa para adaptabilidad */
+  height: 15rem; /* Altura relativa al viewport para hacerlo adaptable */
   pointer-events: none;
   animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh; /* Usamos toda la altura de la pantalla para el header */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2rem; /* Usa rem para escalabilidad */
   color: white;
 }
 
@@ -65,7 +65,10 @@ body {
   }
 }
 
-/* Media queries para pantallas pequeñas */
+/* Ejemplo de media query para pantallas pequeñas */
+
+
+/* Media queries para diferentes tamaños de pantalla */
 @media (max-width: 768px) {
   .App-header {
     font-size: 1.2rem;
@@ -73,11 +76,15 @@ body {
   .App-logo {
     height: 8rem;
   }
+  .app{
+    max-width: 485%; /* Limita el ancho para pantallas grandes */
+    min-width: 20%;
+  }
 }
 
 @media (min-width: 1024px) {
   .App {
-    width: 100%; /* Ajustamos para pantallas grandes */
-    max-width: 100%; /* No exceder el ancho de la pantalla */
+    max-width: 585%; /* Limita el ancho para pantallas grandes */
+    min-width: 20%;
   }
 }

@@ -2,15 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #fff;
+  background-color: #003870;
   height: 100px; /* Altura fija para la cabecera */
-  width: 100%; /* Asegura que el header ocupe todo el ancho disponible */
+  width: 2350px; /* Asegura que el header ocupe todo el ancho disponible */
 }
+
 
 .logo-container {
   width: 635px; /* Tamaño fijo para el contenedor del logo */
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left:20px;
 }
 
@@ -26,6 +26,7 @@
   align-items: center;
   margin-top: 20px;
   position: relative; /* Asegura que el ícono se posicione dentro del contenedor */
+  
 
 }
 .search-icon {
@@ -62,6 +63,7 @@
   display: flex;
   justify-content: center; /* Centra los iconos en el contenedor */
   margin-top: 10px;
+
 }
 
 .social-icons {
@@ -74,6 +76,7 @@
   color: #003870; /* Color para los iconos */
   font-size: 24px; /* Tamaño de los iconos */
   text-decoration: none;
+  
 }
 
 .search-icon {
@@ -97,8 +100,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
     height: 100px; /* Altura fija para la cabecera */
+    
   }
   
   .logo-container {
@@ -179,7 +182,7 @@
   font-size: 16px;  /* Tamaño del texto */
   text-decoration:none;
   margin-left: -50px;
-  }
+    }
 
 
 @media (max-width: 320px) {
