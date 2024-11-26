@@ -96,7 +96,7 @@ const SideMenu = ({ onCategorySelect }) => {
             <div className="menu-items">
                 <ul>
                     <li>
-                        <Link to='' style={{ textDecoration: 'none', color: '#fff' }}> 
+                        <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <FontAwesomeIcon icon={faHome} className="menu-icon" /> Inicio
                         </Link>
                     </li>
