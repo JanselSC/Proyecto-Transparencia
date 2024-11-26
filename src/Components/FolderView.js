@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./FolderView.css";
-import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleLeft,
@@ -11,13 +11,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const FolderView = ({ menuSection, folders = [] }) => {
-  const { searchQuery = "" } = useParams(); // Recibe el searchQuery desde la URL
+  const { searchQuery: urlSearchQuery = "" } = useParams(); // Recibe el searchQuery desde la URL
   const [currentFolder, setCurrentFolder] = useState(null); // Carpeta seleccionada
+  const [searchQuery, setSearchQuery] = useState(urlSearchQuery); // Estado local para el campo de búsqueda
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Sincroniza el estado de búsqueda con el valor de la URL
+    setSearchQuery(urlSearchQuery);
+  }, [urlSearchQuery]);
 
   // Función para filtrar documentos dentro de la carpeta actual
   const searchInFolder = (folder, query) => {
     if (!folder.children) return [];
-    // Filtrar los documentos dentro de esta carpeta
     return folder.children.filter((file) =>
       file.name.toLowerCase().includes(query.toLowerCase())
     );
@@ -41,6 +47,13 @@ const FolderView = ({ menuSection, folders = [] }) => {
   // Volver al nivel raíz
   const handleBackClick = () => {
     setCurrentFolder(null);
+  };
+
+  // Manejar el cambio de búsqueda y actualizar la URL
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    navigate(`/folders/${query}`); // Actualiza la URL con el nuevo searchQuery
   };
 
   return (
@@ -70,7 +83,7 @@ const FolderView = ({ menuSection, folders = [] }) => {
           className="search-input"
           placeholder="Buscar carpeta..."
           value={searchQuery}
-          readOnly
+          onChange={handleSearchChange} // Cambiar el valor de búsqueda
         />
       </div>
 
@@ -85,7 +98,9 @@ const FolderView = ({ menuSection, folders = [] }) => {
                 onClick={() => handleFolderClick(folder)}
               >
                 <FontAwesomeIcon icon={faFolderOpen} style={{ color: "#0f3554" }} />
-                <span className="folder-name" style={{ display: 'flex', flexDirection: 'row' }}>{folder.name}</span>
+                <span className="folder-name" style={{ display: 'flex', flexDirection: 'row' }}>
+                  {folder.name}
+                </span>
                 {folder.children && folder.children.length > 0 && (
                   <FontAwesomeIcon icon={faArrowRightFromBracket} />
                 )}
@@ -110,8 +125,7 @@ const FolderView = ({ menuSection, folders = [] }) => {
       )}
 
       {/* Footer específico para FolderView */}
-      <footer className="folder-view-footer">
-      </footer>
+      <footer className="folder-view-footer"></footer>
     </div>
   );
 };
