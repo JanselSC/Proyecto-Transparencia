@@ -4,10 +4,13 @@ import "./HeaderComponent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
-const Header = () => {
+const Header = ({ availableContent = [] }) => {
   const [searchTerm, setSearchTerm] = useState(""); // Estado para el término de búsqueda
   const navigate = useNavigate(); // Hook para redirección
-
+  const lowerCaseSearchTerm = searchTerm.toLowerCase();
+  const found = availableContent.some((item) =>
+    item.toLowerCase().includes(lowerCaseSearchTerm)
+  );
   // Maneja el cambio en el input de búsqueda
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -16,8 +19,19 @@ const Header = () => {
   // Realiza la búsqueda y redirige al componente FolderView
   const handleKeyDown = (event) => {
     if (event.key === "Enter" && searchTerm.trim()) {
-      // Redirige a la página de FolderView con el término de búsqueda como parámetro
-      navigate(`/folders/${searchTerm}`);
+      const availableContent = ["Constitución Actual", "Reporte Financiero 2024", "Plan de Proyecto"]; // Lista de contenidos disponibles
+      const lowerCaseSearchTerm = searchTerm.toLowerCase();
+      const found = availableContent.some((item) =>
+        item.toLowerCase().includes(lowerCaseSearchTerm)
+      );
+  
+      if (!found) {
+        // Si no se encuentra el término, muestra un alert
+        alert(`No se encontró ningún resultado para "${searchTerm}"`);
+      } else {
+        // Redirige a la página de FolderView con el término de búsqueda como parámetro
+        navigate(`/folders/${searchTerm}`);
+      }
     }
   };
 
@@ -97,7 +111,7 @@ const Header = () => {
           }}
         >
           <div className="search-input-wrapper">
-            <input
+            <input style={{width:'280px', marginLeft:'-20px'}}
               type="text"
               value={searchTerm}
               onChange={handleSearchChange}
