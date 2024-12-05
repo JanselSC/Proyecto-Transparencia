@@ -105,44 +105,45 @@ const Header = ({ availableContent = [] }) => {
         <div
           className="search-container"
           style={{
-            marginTop: "50px",
+            marginTop: "60px",
             marginLeft: "-220px",
             width: "550px",
+           
           }}
         >
-          <div className="search-input-wrapper">
-            <input style={{width:'280px', marginLeft:'-20px'}}
-              type="text"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              onKeyDown={handleKeyDown} // Detecta la tecla Enter
-              className="search-input"
-              placeholder="Buscar..."
-            />
-          </div>
-        </div>
+           <div className="search-input-wrapper">
+      <input
+        style={{ width: '280px', marginLeft: '-20px' }}
+        type="text"
+        value={searchTerm}
+        onChange={handleSearchChange}
+        onKeyDown={handleKeyDown} // Detecta la tecla Enter
+        className="search-input"
+        placeholder="Buscar..."
+      />
+    </div>
+  </div>
 
-        <div className="social-icons" style={{ marginLeft: "-150px" }}>
-          {enlaces.map((enlace, index) => (
-            <a
-              key={index}
-              href={enlace.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={
-                enlace.type === "icon" ? "social-icon" : "contact-link"
-              }
-              style={
-                enlace.type === "text"
-                  ? { textDecoration: "none", marginTop: "7px" }
-                  : {}
-              }
-            >
-              {enlace.type === "text" ? (
-                <span className="contact-text">{enlace.text}</span>
-              ) : (
-                <FontAwesomeIcon icon={enlace.icon} />
-              )}
+
+  <div className="social-icons" style={{ marginLeft: "-160px", display: "flex", gap: "10px", marginTop:'-12px' }}>
+    {enlaces.map((enlace, index) => (
+      <a
+        key={index}
+        href={enlace.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={enlace.type === "icon" ? "social-icon" : "contact-link"}
+        style={
+          enlace.type === "text"
+            ? { textDecoration: "none", marginTop: "7px" }
+            : {}
+        }
+      >
+        {enlace.type === "text" ? (
+          <span className="contact-text">{enlace.text}</span>
+        ) : (
+          <FontAwesomeIcon icon={enlace.icon} />
+        )}
             </a>
           ))}
         </div>

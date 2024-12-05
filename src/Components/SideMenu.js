@@ -88,6 +88,8 @@ const SideMenu = ({ onCategorySelect }) => {
         fetchMenuData();  // Llamar al API cuando se carga el componente
       }, []);
 
+     
+
     return (
         <div className={`side-menu ${isOpen ? 'open' : ''}`}>
             <div className="side-menu-toggle" onClick={toggleMenu}>
@@ -95,18 +97,29 @@ const SideMenu = ({ onCategorySelect }) => {
             </div>
             <div className="menu-items">
                 <ul>
-                    <li>
-                        <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}> 
-                            <FontAwesomeIcon icon={faHome} className="menu-icon" /> Inicio
-                        </Link>
-                    </li>
-                    <li>
-                        <FontAwesomeIcon icon={faLandmark} className="menu-icon" /> Portal de Transparencia
-                    </li>
-                    <li>
-                        <FontAwesomeIcon icon={faBuilding} className="menu-icon" /> Portal Institucional
-                    </li>
 
+                <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}> 
+
+                    <li>
+                       
+                            <FontAwesomeIcon icon={faHome} className="menu-icon" /> Inicio
+                  
+                    </li>
+                    </Link>
+
+                    <Link to='https://transparencia.gob.do/' target='_blank' style={{textDecoration:'none', color:'white'}}>
+                    <li>
+                                                <FontAwesomeIcon icon={faLandmark} className="menu-icon" /> Portal Unico de Transparencia
+                                           </li>
+                    </Link>
+
+                    <Link to='https://inabie.gob.do/'  target='_blank' style={{textDecoration:'none', color:'white'}}>
+                    <li>
+                    
+                        <FontAwesomeIcon icon={faBuilding} className="menu-icon" /> Portal Institucional
+                     
+                    </li>
+                    </Link>
                     {/* Base Legal Submenu */}
                     <li onClick={() => toggleSubmenu('baselegal')} className="submenu-toggle">
                         
@@ -116,34 +129,60 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.baselegal && (
                         <ul className="submenu-content">
-                               <Link to='/folders' style={{ textDecoration: 'none', color: '#fff' }}> 
+                               <Link to='/folders/Constitución' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Constitución de la República Dominicana')}>Constitución de la República Dominicana</li>
                             </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Leyes')}>Leyes</li>
+                            </Link  >
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Decretos')}>Decretos</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Resoluciones')}>Resoluciones</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Otras Normativas')}>Otras Normativas</li>
+                            </Link>
+
                         </ul>
                     )}
 
                     {/* Marco Legal Submenu */}
+                
                     <li onClick={() => toggleSubmenu('marcolegal')} className="submenu-toggle">
                         <FontAwesomeIcon icon={faBalanceScale} className="menu-icon" />
                         Marco Legal del Sistema de Transparencia
                         <FontAwesomeIcon icon={submenuOpen.marcolegal ? faChevronUp : faChevronDown} className="toggle-icon" />
                     </li>
+                    
                     {submenuOpen.marcolegal && (
                         <ul className="submenu-content">
+                                <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Leyes')}>Leyes</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Decretos')}>Decretos</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Resoluciones')}>Resoluciones</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Normativas')}>Normativas</li>
+                            </Link>
                         </ul>
                     )}
 
+                    <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                     <li>
                         <FontAwesomeIcon icon={faUsers} className="menu-icon" /> Estructura Orgánica de la Institución
+                       
                     </li>
+                    </Link>
 
                     {/* Libre Acceso Submenu */}
                     <li onClick={() => toggleSubmenu('libreacceso')} className="submenu-toggle">
@@ -153,12 +192,45 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.libreacceso && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Derecho de los Ciudadanos de Acceder a la Información Pública')}>Derecho de los Ciudadanos de Acceder a la Información Pública</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Estructura Organizacional de la Oficina de libre Acceso a la Información OAI')}>Estructura Organizacional de la Oficina de libre Acceso a la Información OAI</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Manual de Organización de la OAI')}>Manual de Organización de la OAI</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Manual de Procedimientos de la OAI')}>Manual de Procedimientos de la OAI</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Estadísticas y Balances de Gestión de la OAI')}>Estadísticas y Balances de Gestión de la OAI</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Responsable de Acceso a la Información RAI')}>Responsable de Acceso a la Información RAI</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
+                            <li onClick={() => handleCategoryClick('Responsable de Acceso a la Información RAI')}>Resolución de Información Clasificada</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
+                            <li onClick={() => handleCategoryClick('Responsable de Acceso a la Información RAI')}>Indice de Documentos Disponibles para la Entrega</li>
+                            </Link>
+
+                            <Link to='https://saip.gob.do/apps/sip/?step=one' target='_blank' style={{ textDecoration: 'none', color: '#fff' }}>
+                            <li onClick={() => handleCategoryClick('Responsable de Acceso a la Información RAI')}>Enlace al Portal Unico de Solicitud de Acceso a la Información Pública SAIP</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
+                            <li onClick={() => handleCategoryClick('Responsable de Acceso a la Información RAI')}>Indice de Transparencia Estandarizado</li>
+                            </Link>
                         </ul>
                     )}
 
@@ -170,22 +242,37 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.planestrategico && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Planificación Estratégica Institucional')}>Planificación Estratégica Institucional</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Plan Operativo Anual POA')}>Plan Operativo Anual POA</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}>
                             <li onClick={() => handleCategoryClick('Memorias Institucionales')}>Memorias Institucionales</li>
+                            </Link>
                         </ul>
                     )}
 
                     {/* Other Menu Items */}
+                    <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                     <li>
+                    
                         <FontAwesomeIcon icon={faNewspaper} className="menu-icon" /> Publicaciones Oficiales
                     </li>
+                    </Link>
+
+                    <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                     <li>
                         <FontAwesomeIcon icon={faChartBar} className="menu-icon" /> Estadísticas Institucionales
                     </li>
+                   </Link>
+
+                    <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                     <li>
                         <FontAwesomeIcon icon={faInfoCircle} className="menu-icon" /> Información Básica sobre Servicios Públicos
                     </li>
+                    </Link>
 
                     {/* Porta 311 Submenu */}
                     <li onClick={() => toggleSubmenu('porta311')} className="submenu-toggle">
@@ -195,10 +282,23 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.porta311 && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Enlace Directo al Portal 311')}>Enlace Directo al Portal 311</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Estadísticas de las Quejas, Reclamaciones y Sugerencias Recibidas a través del 311')}>Estadísticas de las Quejas, Reclamaciones y Sugerencias Recibidas a través del 311</li>
+                        </Link>
                         </ul>
                     )}
+
+                      <Link to='/folders/1'  target='_blank' style={{textDecoration:'none', color:'white'}}>
+                    <li>
+                    
+                        <FontAwesomeIcon icon={faBuilding} className="menu-icon" /> Declaración Jurada de Patrimonio
+                     
+                    </li>
+                    </Link>
 
                     {/* Presupuesto Submenu */}
                     <li onClick={() => toggleSubmenu('presupuesto')} className="submenu-toggle">
@@ -207,8 +307,12 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.presupuesto && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Presupuesto Aprobado del Año')}>Presupuesto Aprobado del Año</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Ejecución de Presupuesto')}>Ejecución de Presupuesto</li>
+                            </Link>
                         </ul>
                     )}
 
@@ -219,16 +323,23 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.recursosHumanos && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Nómina de Empleados')}>Nómina de Empleados</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Jubilaciones, Pensiones y Retiros')}>Jubilaciones, Pensiones y Retiros</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Enlace al Portal Concursa Administrado por el Ministerio de Administración Pública MAP')}>Enlace al Portal Concursa Administrado por el Ministerio de Administración Pública MAP</li>
+                        </Link>
                         </ul>
                     )}
 
+                    <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                     <li>
                         <FontAwesomeIcon icon={faClipboard} className="menu-icon" /> Programas Asistenciales
                     </li>
-
+                    </Link>
                     {/* Compras y Contrataciones Submenu */}
                     <li onClick={() => toggleSubmenu('comprasContrataciones')} className="submenu-toggle">
                         <FontAwesomeIcon icon={faShoppingCart} className="menu-icon" /> Compras y Contrataciones Públicas
@@ -236,22 +347,45 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.comprasContrataciones && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Cómo Registrarse como Proveedor del Estado?')}>Cómo Registrarse como Proveedor del Estado?</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Plan Anual de Compras y Contrataciones (PACC)')}>Plan Anual de Compras y Contrataciones (PACC)</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Licitaciones Públicas Nacionales e Internacionales')}>Licitaciones Públicas Nacionales e Internacionales</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Licitaciones Restringidas')}>Licitaciones Restringidas</li>
+                            </Link>
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Sorteos de Obras')}>Sorteos de Obras</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Comparaciones de Precios')}>Comparaciones de Precios</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Compras Menores')}>Compras Menores</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Subasta Inversa')}>Subasta Inversa</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Relación de Compras por Debajo del Umbral')}>Relación de Compras por Debajo del Umbral</li>
+                            </Link>
                         </ul>
                     )}
 
+                    <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                     <li>
                         <FontAwesomeIcon icon={faProjectDiagram} className="menu-icon" /> Proyectos y Programas
                     </li>
-
+                    </Link>
                     {/* Finanzas Submenu */}
                     <li onClick={() => toggleSubmenu('finanzas')} className="submenu-toggle">
                         <FontAwesomeIcon icon={faMoneyCheckAlt} className="menu-icon" /> Finanzas
@@ -259,12 +393,25 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.finanzas && (
                         <ul className="submenu-content">
+
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Estados Financieros')}>Estados Financieros</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Informes Financieros')}>Informes Financieros</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Ingresos y Egresos')}>Ingresos y Egresos</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Informes de Auditorías')}>Informes de Auditorías</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Activos Fijos')}>Activos Fijos</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Inventario en Almacén')}>Inventario en Almacén</li>
+                            </Link>
                         </ul>
                     )}
 
@@ -275,9 +422,15 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.datosabiertos && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Datos Abiertos')}>Datos Abiertos</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Estudiantes Beneficiados con el Programa PAE 2017-2023')}>Estudiantes Beneficiados con el Programa PAE 2017-2023</li>
+                           </Link>
+                           <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Beneficiados con Programa de Epidemiología 2017-2023')}>Beneficiados con Programa de Epidemiología 2017-2023</li>
+                     </Link>
                         </ul>
                     )}
 
@@ -288,8 +441,12 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.comisionintegridad && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Miembros y Medios de Contacto')}>Miembros y Medios de Contacto</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Compromiso Ético')}>Compromiso Ético</li>
+                            </Link>
                         </ul>
                     )}
 
@@ -300,8 +457,12 @@ const SideMenu = ({ onCategorySelect }) => {
                     </li>
                     {submenuOpen.consultapublica && (
                         <ul className="submenu-content">
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Relación de Consultas Abiertas')}>Relación de Consultas Abiertas</li>
+                            </Link>
+                            <Link to='/folders/1' style={{ textDecoration: 'none', color: '#fff' }}> 
                             <li onClick={() => handleCategoryClick('Relación de Consultas Públicas')}>Relación de Consultas Públicas</li>
+                            </Link>
                         </ul>
                     )}
                 </ul>

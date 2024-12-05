@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom"; // Eliminamos el import de BrowserRouter
 import "./App.css";
 import LandingPageComponent from "./Components/LandingPage";
 import SideMenu from "./Components/SideMenu";
@@ -34,37 +34,42 @@ function Layout({ children, searchQuery, setSearchQuery }) {
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [folders, setFolders] = useState([]); // Estado para las carpetas
+  const [documents, setDocuments] = useState([]); // Estado para los documentos
 
+  // Cargar las carpetas desde el backend
+  
+
+  
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
-              <LandingPageComponent />
-            </Layout>
-          }
-        />
-        {/* Ruta para ver carpetas, con searchQuery como parámetro opcional */}
-        <Route
-          path="/folders/:searchQuery?"
-          element={
-            <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
-              <FolderView />
-            </Layout>
-          }
-        />
-        <Route
-          path="/documents/:documentId"
-          element={
-            <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
-              <DocumentView />
-            </Layout>
-          }
-        />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
+            <LandingPageComponent />
+          </Layout>
+        }
+      />
+      {/* Ruta para ver carpetas con búsqueda opcional */}
+      <Route
+       path="/folders/:searchQuery?"
+        element={
+          <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
+            <FolderView  />
+          </Layout>
+        }
+      />
+      {/* Ruta para ver documentos */}
+      <Route
+        path="/documents/:documentId"
+        element={
+          <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
+            <DocumentView documents={documents} />
+          </Layout>
+        }
+      />
+    </Routes>
   );
 }
 

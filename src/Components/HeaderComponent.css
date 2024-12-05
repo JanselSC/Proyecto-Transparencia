@@ -25,10 +25,10 @@
   display: flex;
   align-items: center;
   margin-top: 20px;
-  position: relative; /* Asegura que el ícono se posicione dentro del contenedor */
-  
-
+  margin-right: 20px; /* Ajusta este margen para acercar más los iconos */
+  position: relative;
 }
+
 .search-icon {
   position: absolute;
   left: 10px; /* Mantiene el ícono cerca del borde izquierdo del input */
@@ -41,10 +41,10 @@
 
 .search-input-wrapper {
   position: relative;
-  margin-left: 5px;
-  width: 100%; /* Se adapta al tamaño del contenedor padre */
-  max-width: 280px; /* Tamaño máximo para el input */
-  padding-right:20px;
+  margin-left: 10px; /* Ajusta el margen para que se acerque más a los iconos */
+  width: 100%; 
+  max-width: 250px; /* Ajusta el ancho del campo de búsqueda */
+  padding-right: 15px; /* Ajusta el espaciado derecho */
 }
 
 .search-input {
@@ -61,15 +61,15 @@
 
 .social-container {
   display: flex;
-  justify-content: center; /* Centra los iconos en el contenedor */
+  justify-content: center;
   margin-top: 10px;
-
+  margin-left: 20px; /* Reduce el margen para acercar los iconos */
 }
 
 .social-icons {
   display: flex;
-  gap: 15px; /* Espacio entre iconos */
-  margin-left: 80px; /* Eliminamos el margen negativo */
+  gap: 10px; /* Reduce el espacio entre los iconos */
+  margin-left: 10px; /* Ajusta el margen para acercar los iconos */
 }
 
 .social-icon {
