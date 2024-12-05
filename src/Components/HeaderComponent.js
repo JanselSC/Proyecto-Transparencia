@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom"; // Para redirección
 import "./HeaderComponent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,10 +7,8 @@ import { faFacebook, faInstagram, faXTwitter, faYoutube } from "@fortawesome/fre
 const Header = ({ availableContent = [] }) => {
   const [searchTerm, setSearchTerm] = useState(""); // Estado para el término de búsqueda
   const navigate = useNavigate(); // Hook para redirección
-  const lowerCaseSearchTerm = searchTerm.toLowerCase();
-  const found = availableContent.some((item) =>
-    item.toLowerCase().includes(lowerCaseSearchTerm)
-  );
+
+ 
   // Maneja el cambio en el input de búsqueda
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -21,6 +19,7 @@ const Header = ({ availableContent = [] }) => {
     if (event.key === "Enter" && searchTerm.trim()) {
       const availableContent = ["Constitución Actual", "Reporte Financiero 2024", "Plan de Proyecto"]; // Lista de contenidos disponibles
       const lowerCaseSearchTerm = searchTerm.toLowerCase();
+      
       const found = availableContent.some((item) =>
         item.toLowerCase().includes(lowerCaseSearchTerm)
       );

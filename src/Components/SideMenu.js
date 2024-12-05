@@ -15,7 +15,6 @@ import {
     faChartBar, 
     faInfoCircle, 
     faComments, 
-    faHandshake, 
     faClipboard, 
     faShoppingCart, 
     faProjectDiagram, 
@@ -29,9 +28,10 @@ import { Link } from 'react-router-dom';
 
 const SideMenu = ({ onCategorySelect }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [menuData, setMenuData] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+const [error, setError] = useState(null);
+const [menuData, setMenuData] = useState([]);
+
     const [submenuOpen, setSubmenuOpen] = useState({
         'porta311': false,
         'baselegal': false,
@@ -65,30 +65,8 @@ const SideMenu = ({ onCategorySelect }) => {
         }
     };
 
-    const fetchMenuData = async () => {
-        setLoading(true);
-        setError(null);
-        
-        try {
-          // Reemplaza con la URL correcta de tu API
-          const response = await fetch('http://localhost:82/transparencia/index.php/marco-legal-del-sistema-de-transparencia');
-          if (!response.ok) {
-            throw new Error('Error al obtener los datos');
-          }
-          const data = await response.json();
-          setMenuData(data);  // Guardamos los datos del menú en el estado
-        } catch (err) {
-          setError(err.message);
-        } finally {
-          setLoading(false);
-        }
-      };
-    
-      useEffect(() => {
-        fetchMenuData();  // Llamar al API cuando se carga el componente
-      }, []);
 
-     
+ 
 
     return (
         <div className={`side-menu ${isOpen ? 'open' : ''}`}>
