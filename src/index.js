@@ -5,12 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';  // Importa BrowserRouter
 
-const basename = '/build';  // La ruta donde se encuentra tu aplicación en el servidor
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}> {/* Envuelve solo una vez */}
+    <BrowserRouter> {/* No es necesario el basename si se va a usar de manera local */}
       <App />
     </BrowserRouter>
   </React.StrictMode>

@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom"; // Eliminamos el import de BrowserRouter
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import LandingPageComponent from "./Components/LandingPage";
 import SideMenu from "./Components/SideMenu";
 import Header from "./Components/HeaderComponent";
 import Footer from "./Components/FooterComponent";
 import FolderView from "./Components/FolderView";
-import DocumentView from "./Components/DocumentView"; // Asegúrate de crear este componente para mostrar los documentos
+import DocumentView from "./Components/DocumentView";
 import Carousel3D from "./Components/Carousel3D";
+import axios from "axios";
 
-function Layout({ children, searchQuery, setSearchQuery }) {
+function Layout({ children, searchQuery, setSearchQuery, setSelectedCategory }) {
   const images = [
-    'https://inabie.gob.do/images/banners/banners2023/12/cita.jpg',
-    'https://inabie.gob.do/images/banners/4-1.jpg',
-    'https://inabie.gob.do/images/banners/Banners2024/10/BANNERS%20WEB%205.jpg',
-    'https://inabie.gob.do/images/banners/Banners2024/10/BANNERS%20WEB%206.jpg',
+    "https://inabie.gob.do/images/banners/banners2023/12/cita.jpg",
+    "https://inabie.gob.do/images/banners/4-1.jpg",
+    "https://inabie.gob.do/images/banners/Banners2024/10/BANNERS%20WEB%205.jpg",
+    "https://inabie.gob.do/images/banners/Banners2024/10/BANNERS%20WEB%206.jpg",
   ];
 
   return (
@@ -24,7 +25,7 @@ function Layout({ children, searchQuery, setSearchQuery }) {
         <Carousel3D images={images} />
       </div>
       <div className="side-menu-container">
-        <SideMenu />
+        <SideMenu onCategorySelect={setSelectedCategory} /> {/* Pasamos setSelectedCategory */}
       </div>
       <div className="content-container">{children}</div>
       <Footer />
@@ -34,38 +35,62 @@ function Layout({ children, searchQuery, setSearchQuery }) {
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [folders, setFolders] = useState([]); // Estado para las carpetas
-  const [documents, setDocuments] = useState([]); // Estado para los documentos
+  const [folders, setFolders] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(""); // Estado para el tema seleccionado
 
-  // Cargar las carpetas desde el backend
-  
+  useEffect(() => {
+    const fetchFolders = async () => {
+      try {
+        const response = await axios.get("http://10.100.0.123:5210/Carpetas");
+        setFolders(response.data);
+      } catch (error) {
+        console.error("Error al cargar las carpetas:", error);
+      }
+    };
 
-  
+    fetchFolders();
+  }, []);
+
   return (
     <Routes>
       <Route
         path="/"
         element={
-          <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
+          <Layout
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            setSelectedCategory={setSelectedCategory}
+          >
             <LandingPageComponent />
           </Layout>
         }
       />
-      {/* Ruta para ver carpetas con búsqueda opcional */}
       <Route
-       path="/folders/:searchQuery?"
+        path="/folders/:searchQuery?"
         element={
-          <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
-            <FolderView  />
+          <Layout
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            setSelectedCategory={setSelectedCategory}
+          >
+            <FolderView
+              folders={folders}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              selectedCategory={selectedCategory} // Pasamos el tema seleccionado
+            />
           </Layout>
         }
       />
-      {/* Ruta para ver documentos */}
       <Route
         path="/documents/:documentId"
         element={
-          <Layout searchQuery={searchQuery} setSearchQuery={setSearchQuery}>
-            <DocumentView documents={documents} />
+          <Layout
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            setSelectedCategory={setSelectedCategory}
+          >
+            <DocumentView />
           </Layout>
         }
       />

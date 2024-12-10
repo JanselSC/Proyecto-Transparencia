@@ -1,14 +1,13 @@
 .folder-view {
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(36, 36, 36, 0.1);
   width: 100%;
   max-width: 800px;
   margin: auto;
   margin-left: 980px;
   margin-top: -100px;
-  position: relative; /* Añadido para asegurar que los elementos dentro se posicionen correctamente */
-  position: relative; /* Añadido para asegurar que el botón esté bien posicionado */
-  z-index: 10; /* Añadido para asegurar que el botón esté por encima del contenido */
+  position: relative; /* Asegura que los elementos dentro se posicionen correctamente */
+  z-index: 10; /* Asegura que el contenido esté por encima de otros elementos */
 }
 
 .folder-view-title-container {
@@ -16,8 +15,6 @@
   align-items: start;
   gap: 60px; /* Espacio entre el icono y el título */
   margin-bottom: 16px;
-
-
 }
 
 .folder-view-title {
@@ -27,16 +24,16 @@
   font-weight: bold;
   color: #0f3554;
   margin: 0; /* Elimina el margen para mejor alineación */
-  margin-left:150px;
-  margin-bottom:20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .back-icon {
   cursor: pointer;
   display: flex;
   align-items: center;
-  position: relative; /* Añadido para asegurar que el botón esté bien posicionado */
-  z-index: 10; /* Añadido para asegurar que el botón esté por encima del contenido */
+  position: relative; /* Posiciona el botón correctamente */
+  z-index: 10; /* Asegura que el botón esté encima del contenido */
 }
 
 .back-icon:hover {
@@ -77,8 +74,9 @@
   justify-content: space-between;
   padding: 12px 16px;
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 10px 4px rgba(177, 62, 62, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -89,16 +87,17 @@
 
 .folder-icon {
   font-size: 20px;
-  margin-left: 10px;
   color: #0f3554;
+  margin-right: 8px; /* Espacio entre el icono y el nombre */
 }
 
 .folder-name {
   font-size: 16px;
   font-weight: bold;
   color: #0f3554;
-  flex-grow: 1;
-  margin-left: 8px;
+  flex-grow: 1; /* Permite que el nombre ocupe el espacio restante automáticamente */
+  text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+  margin: 0; /* Elimina cualquier margen adicional */
 }
 
 .folder-item .fa-arrow-right-from-bracket {
@@ -120,6 +119,8 @@
   padding: 12px 16px;
   background-color: #ffffff;
   border-radius: 8px;
+  border: 0.5px solid #ccc;
+  border-color: #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin-bottom: 8px;
@@ -136,19 +137,27 @@
 }
 
 .file-name {
+  display: flex;
   font-size: 16px;
   font-weight: bold;
   color: #0f3554;
+  text-decoration: none; /* Elimina la línea debajo del texto */
+  text-align: center; /* Centra el texto del nombre */
+  margin: 0 auto; /* Centra el texto en el contenedor */
+  display: block;
 }
 
 .file-date {
   font-size: 14px;
   color: #666;
+  margin-left: 110px;
 }
 
 .file-actions {
   display: flex;
   gap: 8px;
+  margin-left: auto; /* Mueve los botones hacia la derecha */
+  align-items: center;
 }
 
 .preview-button,
@@ -157,8 +166,10 @@
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 8px 12px;
-  font-size: 14px;
+  width: 28px;
+  margin: auto;
+  height: 18px;
+  font-size: 12px; /* Reduce el tamaño del texto */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -171,11 +182,14 @@
 .preview-button .fa-eye,
 .download-button .fa-download {
   margin-right: 4px;
+  font-size: 12px; /* Reduce el tamaño del ícono */
 }
 
 .folder-view-footer {
-  margin-top: 630px; /* Ajusta este valor para mover el footer hacia abajo */
   text-align: center;
   padding: 10px;
- 
+  margin-top: 20px; /* Asegura que el footer se mantenga abajo */
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* Asegura que el footer ocupe todo el ancho disponible */
 }

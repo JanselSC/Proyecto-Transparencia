@@ -1,7 +1,7 @@
 .elegant-carousel {
   position: relative;
   width: 1520px; /* Ajusta el tamaño a tus necesidades */
-  height: 300px;
+  height: 500px;
   margin: 50px auto;
   overflow: hidden;
   border-radius: 15px;
@@ -18,8 +18,8 @@
 
 .carousel-item {
   position: relative;
-  width: 458px; /* Ancho de cada imagen */
-  height: 100%;
+  width:  650px; /* Ancho de cada imagen */
+  height:280px;
   margin: 0 30px; /* Espacio entre las imágenes */
   flex-shrink: 0;
   border-radius: 10px;
